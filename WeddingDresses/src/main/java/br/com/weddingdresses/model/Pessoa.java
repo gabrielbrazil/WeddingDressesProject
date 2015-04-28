@@ -1,5 +1,8 @@
 package br.com.weddingdresses.model;
 
+import org.springframework.stereotype.Component;
+
+
 public class Pessoa {
 		private Integer id;
 		private String nome;
@@ -12,10 +15,6 @@ public class Pessoa {
 		
 		public Pessoa() {}
 		
-		
-		
-
-
 
 		public String getNome() {
 			return nome;

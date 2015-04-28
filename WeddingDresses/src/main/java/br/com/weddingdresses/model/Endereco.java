@@ -12,7 +12,9 @@ import java.util.Map;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Endereco {
 	private Integer id;
 	private String rua;
@@ -58,8 +60,8 @@ public class Endereco {
 		return estados;
 	}
 	
-	public void getByCep(String cep) throws MalformedURLException,IOException,JSONException{
-		final String CEP_BASE_URL = "viacep.com.br/ws/"+cep+"/json/";
+	public JSONObject getByCep(String cep) throws MalformedURLException,IOException,JSONException{
+		final String CEP_BASE_URL = "http://viacep.com.br/ws/"+cep+"/json/";
 		HttpURLConnection urlConnection;
 		BufferedReader reader;
 		URL url = new URL(CEP_BASE_URL);
@@ -68,9 +70,15 @@ public class Endereco {
 		urlConnection.connect();
 		InputStream inputStream = urlConnection.getInputStream();
 		reader = new BufferedReader(new InputStreamReader(inputStream));
-		String data = reader.toString();
+		String line;
+		StringBuilder sb = new StringBuilder();
+		while((line = reader.readLine())!=null){
+			sb.append(line+"\n");
+		}
+		String data = sb.toString();
 		JSONObject jsonObject = new JSONObject(data);
-		String bairro = jsonObject.getString("bairro");
+//		String bairro = jsonObject.getString("bairro");
+		return jsonObject;
 	}
 
 	public Integer getId() {

@@ -23,6 +23,10 @@ public class Endereco {
 	private String cep;
 	private String estado;
 	private String bairro;
+	private String uf;
+	
+	
+	
 	
 	public Endereco() {
 	}
@@ -77,7 +81,6 @@ public class Endereco {
 		}
 		String data = sb.toString();
 		JSONObject jsonObject = new JSONObject(data);
-//		String bairro = jsonObject.getString("bairro");
 		return jsonObject;
 	}
 
@@ -135,6 +138,16 @@ public class Endereco {
 
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
+	}
+
+
+	public String getUf() {
+		return uf;
+	}
+
+
+	public void setUf(String uf) {
+		this.uf = uf;
 	}
 
 	

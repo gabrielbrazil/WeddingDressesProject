@@ -8,6 +8,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,17 +24,22 @@ public class PessoaController {
 	@Autowired
 	private Endereco endereco;
 	
-	
 	@RequestMapping("/getEstados")
 	public @ResponseBody String getEstados(@RequestParam(value="cep") String cep ){
-		String bairro = new String();
+		String json = new String();
 		try {
 		 JSONObject jsonObject = endereco.getByCep(cep);
-		 bairro =  jsonObject.getString("bairro");
+		 json = jsonObject.toString();
 		} catch (IOException | JSONException e) {
 			e.printStackTrace();
 		}
-		return bairro;
+		return json;
+	}
+	
+	@RequestMapping("/salvar")
+	public String SalvarFormulario(Model model){
+		model.addAttribute("pessoa",new Pessoa());
+		return "redirect:home";
 	}
 
 
@@ -46,6 +53,5 @@ public class PessoaController {
 	}
 
 
-	
 	
 }

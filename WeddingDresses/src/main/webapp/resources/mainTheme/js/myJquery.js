@@ -1,18 +1,39 @@
 $(document).ready(function(){
 	
 	
-	$('.frm_cep').focusout(function(){
-		var cep = $('.frm_cep').val();
+	$('#btn_cep').click(function(){
+		$cep = $('.frm_cep');
 		 $.ajax({ 
 			  type:'GET',
 		      url:'getEstados',
-		      data: {"cep": cep},
-		      dataType: 'json', 
+		      data: {"cep":$cep.val()},
+		      dataType:'json',
 		      success:function(data){
-		    	alert(data);
+		    	  var rua = "logradouro";
+		    	  var complemento ="complemento";
+		    	  var bairro = "bairro";
+		    	  var estado = "localidade";
+		    	  var uf = "uf";
+		    	  $.each(data, function( key, value ) {
+		    		  if(key == rua){
+		    			  $('.frm_rua').val(value);  
+		    		  }else if(key == complemento){
+		    			  $('frm_complemento').val(value);
+		    		  }else if(key == bairro){
+		    			  $('.frm_bairro').val(value);
+		    		  }else if(key == estado){
+		    			  $('.frm_estados').append($('<option>').text(value).val(value).attr('selected','selected')); 
+		    		  }
+		    		   
+		    	  });
 		      },
+		      error: function(XMLHttpRequest, textStatus, errorThrown) {
+		            console.error(errorThrown);
+		        }
 		 });
 		});
   	});	
 	
 	
+
+

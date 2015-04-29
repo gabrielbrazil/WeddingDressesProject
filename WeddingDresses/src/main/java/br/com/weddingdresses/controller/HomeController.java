@@ -1,11 +1,16 @@
 package br.com.weddingdresses.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import br.com.weddingdresses.model.Pessoa;
 
 
 @Controller
 public class HomeController {
+	
+	private Pessoa pessoa;
 	
 	@RequestMapping("/home") 
 	public String home(){
@@ -14,14 +19,22 @@ public class HomeController {
 	
 	
 	@RequestMapping("/novo")
-	public String NovoFormulario(){
-		
+	public String NovoFormulario(Model model){
+		model.addAttribute("pessoa",new Pessoa());
 		return"pessoa/novo";
 	}
-	
-	@RequestMapping("/salvar")
-	public String SalvarFormulario(){
-		return "redirect:home";
+
+
+	public Pessoa getPessoa() {
+		return pessoa;
 	}
+
+
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
+	}
+	
+	
+	
 	
 }

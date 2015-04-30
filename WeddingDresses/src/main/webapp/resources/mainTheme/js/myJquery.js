@@ -2,7 +2,7 @@ $(document).ready(function(){
 	
 	
 	$('#btn_cep').click(function(){
-		$cep = $('.frm_cep');
+		$cep = $('#frm_cep');
 		 $.ajax({ 
 			  type:'GET',
 		      url:'getEstados',
@@ -16,13 +16,15 @@ $(document).ready(function(){
 		    	  var uf = "uf";
 		    	  $.each(data, function( key, value ) {
 		    		  if(key == rua){
-		    			  $('.frm_rua').val(value);  
+		    			  $('#frm_rua').val(value);  
 		    		  }else if(key == complemento){
-		    			  $('frm_complemento').val(value);
+		    			  $('#frm_complemento').val(value);
 		    		  }else if(key == bairro){
-		    			  $('.frm_bairro').val(value);
+		    			  $('#frm_bairro').val(value);
 		    		  }else if(key == estado){
-		    			  $('.frm_estados').append($('<option>').text(value).val(value).attr('selected','selected')); 
+		    			  $('#frm_estados').append($('<option>').text(value).val(value).attr('selected','selected')); 
+		    		  }else if(key == uf){
+		    			  $('#frm_uf').append($('<option>').text(value).val(value).attr('selected','selected'));
 		    		  }
 		    		   
 		    	  });

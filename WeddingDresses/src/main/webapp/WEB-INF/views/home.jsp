@@ -39,7 +39,7 @@
 
 <body>
 
-    <div class="brand">Vestidos de Noiva Rebeca</div>
+    <div class="brand">Wedding Dresses</div>
     <div class="address-bar">3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890</div>
 
     <!-- Navigation -->

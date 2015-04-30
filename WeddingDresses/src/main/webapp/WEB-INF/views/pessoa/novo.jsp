@@ -24,9 +24,9 @@
 
 	   <!-- jQuery -->
     <script src="<s:url value="/resources/js/jquery.js"/>"></script>
+     <script src="<s:url value="/resources/js/myJquery.js"/>"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="<s:url value="/resources/js/bootstrap.min.js"/>"></script>
 	
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -86,7 +86,7 @@
          		 	<form:form action="salvar" method="Post" commandName="pessoa">
   						<div class="form-group">
     						<label for="frm_nome">Nome</label>
-    						<form:input type="text" path="nome" class="form-control" id="frm_nome" placeholder="Informe o nome"/>
+    						<form:input type="text" path="nome" class="form-control" id="frm_nome" placeholder="Informe o nome" />
   						</div>
   						
   						<div class="form-group">
@@ -107,7 +107,7 @@
   						<div class="form-group">
     						<label for="frm_cep">Cep</label>
     						<form:input type="text" path="endereco.cep" class="form-control" id="frm_cep" placeholder="Informe o cep"/>
-    						<button class="btn btn-default" id="btn_cep">Ok</button>
+    						<input type="button" class="btn btn-default" id="btn_cep" value="ok"/>
   						</div>
   						
   						<div class="form-group">
@@ -131,11 +131,6 @@
   						</div>
   						
   						<div class="form-group">
-    						<label for="frm_Bairro">Bairro</label>
-    						<form:input type="text" path="endereco.bairro" class="form-control" id="frm_Bairro" placeholder="Informe o bairro"/>
-  						</div>
-  						
-  						<div class="form-group">
     						<label for="frm_estados">Estados</label>
     						<form:select class="form-control" id="frm_estados" path="endereco.estado">
 								<option value="">--Selecione--</option>
@@ -143,8 +138,8 @@
   						</div>
   						
   						<div class="form-group">
-    						<label for="frm_uf">Estados</label>
-    						<form:select class="frm_uf" path="endereco.uf">
+    						<label for="frm_uf">Uf</label>
+    						<form:select class="form-control" id="frm_uf" path="endereco.uf">
 								<option value="">--Selecione--</option>
 							</form:select>
   						</div>

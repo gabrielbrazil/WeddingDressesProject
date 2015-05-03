@@ -1,6 +1,5 @@
 package br.com.weddingdresses.model;
 
-import org.springframework.stereotype.Component;
 
 
 public class Pessoa {

@@ -16,6 +16,7 @@
 
     <!-- Custom CSS -->
     <link href="<s:url value="/resources/css/business-casual.css"/>" rel="stylesheet"/>
+    <link href="<s:url value="/resources/css/myCss.css"/>" rel="stylesheet"/>
 
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
@@ -83,12 +84,14 @@
 	  	<div class="row">
         	<div class="box">
          		 <div class="col-lg-12">
+         		 	<h1 class="text-center">Preencha o Formulario</h1>
+         		 	
+         		 	<div class="col-lg-8 col-lg-offset-2">
          		 	<form:form action="salvar" method="Post" commandName="pessoa">
   						<div class="form-group">
     						<label for="frm_nome">Nome</label>
     						<form:input type="text" path="nome" class="form-control" id="frm_nome" placeholder="Informe o nome" />
   						</div>
-  						
   						<div class="form-group">
     						<label for="frm_cpf">Cpf</label>
     						<form:input type="text" path="cpf" class="form-control" id="frm_cpf" placeholder="Informe o cpf"/>
@@ -96,7 +99,7 @@
   						
   						<div class="form-group">
     						<label for="frm_email">Email</label>
-    						<form:input type="text" path="cpf" class="form-control" id="frm_email" placeholder="Informe o email"/>
+    						<form:input type="text" path="email" class="form-control" id="frm_email" placeholder="Informe o email"/>
   						</div>
   						
   						<div class="form-group">
@@ -107,37 +110,39 @@
   						<div class="form-group">
     						<label for="frm_cep">Cep</label>
     						<form:input type="text" path="endereco.cep" class="form-control" id="frm_cep" placeholder="Informe o cep"/>
-    						<input type="button" class="btn btn-default" id="btn_cep" value="ok"/>
+    						<a href="http://www.buscacep.correios.com.br/" target="_blank">Não sabe o cep?</a>
   						</div>
+  						<input type="button" class="btn btn-default" id="btn_cep" value="ok"/>
   						
-  						<div class="form-group">
+  						<h1 class="text-center head-endereco">Endereco</h1>
+  						<div class="form-group frm_rua">
     						<label for="frm_rua">Logradouro</label>
     						<form:input type="text" path="endereco.rua" class="form-control" id="frm_rua" placeholder="Informe o cep acima"/>
   						</div>
   						
-  						<div class="form-group">
+  						<div class="form-group frm_numero">
     						<label for="frm_numero">Numero</label>
     						<form:input type="text" path="endereco.numero" class="form-control" id="frm_numero" placeholder="Informe o numero"/>
   						</div>
   						
-  						<div class="form-group">
+  						<div class="form-group frm_complemento">
     						<label for="frm_complemento">Complemento</label>
     						<form:input type="text" path="endereco.complemento" class="form-control" id="frm_complemento" placeholder="Informe o complemento"/>
   						</div>
   						
-  						<div class="form-group">
+  						<div class="form-group frm_bairro">
     						<label for="frm_Bairro">Bairro</label>
-    						<form:input type="text" path="endereco.bairro" class="form-control" id="frm_Bairro" placeholder="Informe o bairro"/>
+    						<form:input type="text" path="endereco.bairro" class="form-control" id="frm_bairro" placeholder="Informe o bairro"/>
   						</div>
   						
-  						<div class="form-group">
+  						<div class="form-group frm_estados">
     						<label for="frm_estados">Estados</label>
     						<form:select class="form-control" id="frm_estados" path="endereco.estado">
 								<option value="">--Selecione--</option>
 							</form:select>
   						</div>
   						
-  						<div class="form-group">
+  						<div class="form-group frm_uf">
     						<label for="frm_uf">Uf</label>
     						<form:select class="form-control" id="frm_uf" path="endereco.uf">
 								<option value="">--Selecione--</option>
@@ -146,6 +151,7 @@
   						<button type="submit" class="btn btn-default">Salvar</button>
 					</form:form>
                 </div>
+            </div>
             </div>
         </div>
 	  </div>

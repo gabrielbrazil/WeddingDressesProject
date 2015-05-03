@@ -15,9 +15,10 @@ public class PessoaDAO implements IPessoaDAO {
 	
 	@Override
 	public void salvar(Pessoa pessoa) {
-		String query = "insert into pessoa(nome,cpf,email,telefone,recebe_informacao,endereco_id) values(?,?,?,?,?)";
+		String query = "insert into pessoa(nome,cpf,email,telefone,recebe_informacao,endereco_id) values(?,?,?,?,?,?)";
 		jdbcTemplate.update(query,new Object[]{pessoa.getNome(),pessoa.getCpf(),pessoa.getEmail(),
 				pessoa.getTelefone(),pessoa.isRecebeInformacao(),pessoa.getEndereco().getId()});
+		
 	
 	}
 	

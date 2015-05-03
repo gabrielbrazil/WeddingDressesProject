@@ -17,12 +17,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.weddingdresses.model.Endereco;
 import br.com.weddingdresses.model.Pessoa;
+import br.com.weddingdresses.service.PessoaService;
 
 @Controller
 public class PessoaController {
 
 	@Autowired
 	private Endereco endereco;
+	
+	@Autowired
+	private PessoaService pessoaService;
 	
 	@RequestMapping("/getEstados")
 	public @ResponseBody String getEstados(@RequestParam(value="cep") String cep ){
@@ -37,8 +41,8 @@ public class PessoaController {
 	}
 	
 	@RequestMapping("/salvar")
-	public String SalvarFormulario(Model model){
-		model.addAttribute("pessoa",new Pessoa());
+	public String SalvarFormulario(@ModelAttribute("pessoa")Pessoa pessoa){
+		pessoaService.salvar(pessoa);
 		return "redirect:home";
 	}
 

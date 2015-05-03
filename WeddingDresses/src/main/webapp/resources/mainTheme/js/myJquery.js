@@ -14,6 +14,14 @@ $(document).ready(function(){
 		    	  var bairro = "bairro";
 		    	  var estado = "localidade";
 		    	  var uf = "uf";
+		    	  $('h1.head-endereco').show();
+		    	  $('div.frm_rua').show();
+		    	  $('div.frm_complemento').show();
+		    	  $('div.frm_bairro').show();
+		    	  $('div.frm_numero').show();
+		    	  $('div.frm_estados').show();
+		    	  $('div.frm_uf').show();
+		    	  
 		    	  $.each(data, function( key, value ) {
 		    		  if(key == rua){
 		    			  $('#frm_rua').val(value);  
@@ -22,9 +30,13 @@ $(document).ready(function(){
 		    		  }else if(key == bairro){
 		    			  $('#frm_bairro').val(value);
 		    		  }else if(key == estado){
-		    			  $('#frm_estados').append($('<option>').text(value).val(value).attr('selected','selected')); 
+		    			  	if($('#frm_estados option').size() < 2){
+		    				   $('#frm_estados').append($('<option>').text(value).val(value).attr('selected','selected'));
+		    			  	}
 		    		  }else if(key == uf){
-		    			  $('#frm_uf').append($('<option>').text(value).val(value).attr('selected','selected'));
+		    				if($('#frm_uf option').size() < 2){
+		    					$('#frm_uf').append($('<option>').text(value).val(value).attr('selected','selected'));
+		    				}	
 		    		  }
 		    		   
 		    	  });

@@ -1,9 +1,14 @@
 package br.com.weddingdresses.model;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 
 
 public class Pessoa {
 		private Integer id;
+		@NotNull
+		@Size(min=5,message="O nome não pode ter menos de 5 caracteres!")
 		private String nome;
 		private String cpf;
 		private String email;

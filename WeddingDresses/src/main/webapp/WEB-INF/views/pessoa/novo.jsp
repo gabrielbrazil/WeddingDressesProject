@@ -1,6 +1,5 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-
 <html>
 <head>
     <meta charset="utf-8">
@@ -87,7 +86,7 @@
          		 	<h1 class="text-center">Preencha o Formulario</h1>
          		 	
          		 	<div class="col-lg-8 col-lg-offset-2">
-         		 	<form:form action="salvar" method="Post" commandName="pessoa">
+         		 	<form:form action="salvar" method="Post" modelAttribute="pessoa">
   						<div class="form-group">
     						<label for="frm_nome">Nome</label>
     						<form:input type="text" path="nome" class="form-control" id="frm_nome" placeholder="Informe o nome" />

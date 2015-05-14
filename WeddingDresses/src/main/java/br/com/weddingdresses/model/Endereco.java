@@ -14,7 +14,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.stereotype.Component;
 
-@Component
 public class Endereco {
 	private Integer id;
 	private String rua;

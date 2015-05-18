@@ -44,7 +44,7 @@ public class PessoaController {
 	@RequestMapping("/salvar")
 	public String SalvarFormulario(@Valid Pessoa pessoa,BindingResult result){
 		if(result.hasErrors()){
-		 return "redirect:home";	
+		 return "pessoa/novo";	
 		}
 		pessoaService.salvar(pessoa);
 		return "redirect:home";

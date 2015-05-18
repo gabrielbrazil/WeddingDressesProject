@@ -1,6 +1,8 @@
 package br.com.weddingdresses.model;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 
@@ -10,10 +12,18 @@ public class Pessoa {
 		@NotNull
 		@Size(min=5,message="O nome não pode ter menos de 5 caracteres!")
 		private String nome;
+		@NotNull
+		@Size(min=11,max=11,message="Favor informar o cpf corretamente!")
 		private String cpf;
+		@NotNull
+		@Pattern(regexp="^[\\w\\-]+(\\.[\\w\\-]+)*@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}$",message="Formato do email incorreto")
 		private String email;
+		@NotNull
+		@Size(min=9,max=9,message="Informar o tel/cel corretamente")
 		private String telefone;
 		private boolean recebeInformacao;
+		@NotNull
+		@Valid
 		private Endereco endereco;
 		
 		

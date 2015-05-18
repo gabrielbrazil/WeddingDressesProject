@@ -1,6 +1,4 @@
 $(document).ready(function(){
-	
-	
 	$('#btn_cep').click(function(){
 		$cep = $('#frm_cep');
 		 $.ajax({ 
@@ -49,5 +47,4 @@ $(document).ready(function(){
   	});	
 	
 	
-
 

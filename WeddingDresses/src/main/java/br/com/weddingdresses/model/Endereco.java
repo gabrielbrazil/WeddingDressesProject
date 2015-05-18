@@ -10,14 +10,21 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.springframework.stereotype.Component;
 
 public class Endereco {
 	private Integer id;
+	@NotNull
 	private String rua;
+	@NotNull
+	@Size(min=2,max=8,message="Deve ter mais de 7 caracteres!")
 	private String numero;
+	@NotNull
+	@Size(min=2,max=8,message="Deve ter mais de 7 caracteres!")
 	private String complemento;
 	private String cep;
 	private String estado;

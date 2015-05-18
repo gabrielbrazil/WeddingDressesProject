@@ -84,9 +84,29 @@
         	<div class="box">
          		 <div class="col-lg-12">
          		 	<h1 class="text-center">Preencha o Formulario</h1>
-         		 	
          		 	<div class="col-lg-8 col-lg-offset-2">
          		 	<form:form action="salvar" method="Post" modelAttribute="pessoa">
+         		 		
+         		 		<div class="alert alert-danger" role="alert">
+  							<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  								<span class="sr-only">Error:</span>
+ 								<form:errors path="nome"/><br/>
+ 								<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  								<span class="sr-only">Error:</span>
+ 								<form:errors path="nome" /><br/>
+ 								<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  								<span class="sr-only">Error:</span>
+         		 				<form:errors path="cpf" /><br/>
+         		 				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  								<span class="sr-only">Error:</span>
+         		 				<form:errors path="email" /><br/>
+         		 				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  								<span class="sr-only">Error:</span>
+         		 				<form:errors path="telefone"/><br/>
+         		 				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  								<span class="sr-only">Error:</span>
+         		 				<form:errors path="endereco.numero"/>
+						</div>
   						<div class="form-group">
     						<label for="frm_nome">Nome</label>
     						<form:input type="text" path="nome" class="form-control" id="frm_nome" placeholder="Informe o nome" />

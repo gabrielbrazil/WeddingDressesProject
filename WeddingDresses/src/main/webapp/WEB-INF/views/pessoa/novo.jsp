@@ -1,5 +1,6 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
     <meta charset="utf-8">
@@ -16,7 +17,6 @@
     <!-- Custom CSS -->
     <link href="<s:url value="/resources/css/business-casual.css"/>" rel="stylesheet"/>
     <link href="<s:url value="/resources/css/myCss.css"/>" rel="stylesheet"/>
-
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css"/>
@@ -24,7 +24,9 @@
 
 	   <!-- jQuery -->
     <script src="<s:url value="/resources/js/jquery.js"/>"></script>
-     <script src="<s:url value="/resources/js/myJquery.js"/>"></script>
+    <script src="<s:url value="/resources/js/jquery.maskedinput.js"/>"></script>
+    <script src="<s:url value="/resources/js/myJquery.js"/>"></script>
+    
 
     <!-- Bootstrap Core JavaScript -->
 	
@@ -85,32 +87,23 @@
          		 <div class="col-lg-12">
          		 	<h1 class="text-center">Preencha o Formulario</h1>
          		 	<div class="col-lg-8 col-lg-offset-2">
+         		 	 		
          		 	<form:form action="salvar" method="Post" modelAttribute="pessoa">
-         		 		
+         		 	 <c:if test="${hasError}">
          		 		<div class="alert alert-danger" role="alert">
-  							<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-  								<span class="sr-only">Error:</span>
- 								<form:errors path="nome"/><br/>
- 								<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-  								<span class="sr-only">Error:</span>
- 								<form:errors path="nome" /><br/>
- 								<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-  								<span class="sr-only">Error:</span>
-         		 				<form:errors path="cpf" /><br/>
-         		 				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-  								<span class="sr-only">Error:</span>
-         		 				<form:errors path="email" /><br/>
-         		 				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-  								<span class="sr-only">Error:</span>
-         		 				<form:errors path="telefone"/><br/>
-         		 				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-  								<span class="sr-only">Error:</span>
-         		 				<form:errors path="endereco.numero"/>
+         		 			<s:bind path="*">
+								<c:forEach items="${status.errorMessages}" var="error">
+								 	<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  									<span class="sr-only">Error:</span>
+  									 ${error}<br/>
+  								</c:forEach>
+  							</s:bind>			
 						</div>
+					</c:if>	
   						<div class="form-group">
     						<label for="frm_nome">Nome</label>
     						<form:input type="text" path="nome" class="form-control" id="frm_nome" placeholder="Informe o nome" />
-  						</div>
+  							</div>	
   						<div class="form-group">
     						<label for="frm_cpf">Cpf</label>
     						<form:input type="text" path="cpf" class="form-control" id="frm_cpf" placeholder="Informe o cpf"/>
@@ -128,7 +121,7 @@
   						
   						<div class="form-group">
     						<label for="frm_cep">Cep</label>
-    						<form:input type="text" path="endereco.cep" class="form-control" id="frm_cep" placeholder="Informe o cep"/>
+    						<form:input type="text" path="endereco.cep" class="form-control" id="frm_cep" />
     						<a href="http://www.buscacep.correios.com.br/" target="_blank">Não sabe o cep?</a>
   						</div>
   						<input type="button" class="btn btn-default" id="btn_cep" value="ok"/>

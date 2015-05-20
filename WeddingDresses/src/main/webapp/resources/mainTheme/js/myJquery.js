@@ -1,4 +1,8 @@
 $(document).ready(function(){
+	
+		$("#frm_cep").mask("99999-999");
+	
+	
 	$('#btn_cep').click(function(){
 		$cep = $('#frm_cep');
 		 $.ajax({ 

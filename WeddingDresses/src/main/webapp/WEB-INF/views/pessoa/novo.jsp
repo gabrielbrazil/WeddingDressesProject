@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Business Casual - Start Bootstrap Theme</title>
+    <title>Business Casual</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" type="text/css" href="<s:url value="/resources/css/bootstrap.min.css"/>"/>
@@ -39,8 +39,8 @@
 </head>
 <body>
 
-	<div class="brand">Wedding Dresses</div>
-    <div class="address-bar">3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890</div>
+	<div class="brand"><s:message code="titulo.pessoa.marca"/></div>
+    <div class="address-bar"><s:message code="titulo.pessoa.barra.endereco"/></div>
 
     <!-- Navigation -->
     <nav class="navbar navbar-default" role="navigation">
@@ -54,25 +54,25 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                <a class="navbar-brand" href="index.html">Business Casual</a>
+                <a class="navbar-brand" href="index.html"><s:message code="menu.pessoa.principal"/></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                       <a href="#">Home</a>
+                       <a href="#"><s:message code="menu.pessoa.home"/></a>
                     </li>
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="about.html"><s:message code="menu.pessoa.sobre"/></a>
                     </li>
                     <li>
-                        <a href="blog.html">Blog</a>
+                        <a href="blog.html"><s:message code="menu.pessoa.blog"/></a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="contact.html"><s:message code="menu.pessoa.contato"/></a>
                     </li>
                      <li>
-                        <a href="novo">Cadastre-se</a>
+                        <a href="novo"><s:message code="menu.pessoa.formulario"/></a>
                     </li>
                 </ul>
             </div>
@@ -85,7 +85,7 @@
 	  	<div class="row">
         	<div class="box">
          		 <div class="col-lg-12">
-         		 	<h1 class="text-center">Preencha o Formulario</h1>
+         		 	<h1 class="text-center"><s:message code="titulo.pessoa.formulario"/></h1>
          		 	<div class="col-lg-8 col-lg-offset-2">
          		 	 		
          		 	<form:form action="salvar" method="Post" modelAttribute="pessoa">
@@ -101,66 +101,71 @@
 						</div>
 					</c:if>	
   						<div class="form-group">
-    						<label for="frm_nome">Nome</label>
+    						<label for="frm_nome"><s:message code="campo.pessoa.nome"/></label>
     						<form:input type="text" path="nome" class="form-control" id="frm_nome" placeholder="Informe o nome" />
   							</div>	
   						<div class="form-group">
-    						<label for="frm_cpf">Cpf</label>
+    						<label for="frm_cpf"><s:message code="campo.pessoa.cpf"/></label>
     						<form:input type="text" path="cpf" class="form-control" id="frm_cpf" placeholder="Informe o cpf"/>
   						</div>
   						
   						<div class="form-group">
-    						<label for="frm_email">Email</label>
+    						<label for="frm_email"><s:message code="campo.pessoa.email"/></label>
     						<form:input type="text" path="email" class="form-control" id="frm_email" placeholder="Informe o email"/>
   						</div>
   						
   						<div class="form-group">
-    						<label for="frm_telefone">Telefone</label>
+    						<label for="frm_telefone"><s:message code="campo.pessoa.telefone"/></label>
     						<form:input type="text" path="telefone" class="form-control" id="frm_telefone" placeholder="Informe o telefone"/>
   						</div>
   						
   						<div class="form-group">
-    						<label for="frm_cep">Cep</label>
+    						<label for="frm_celular"><s:message code="campo.pessoa.celular"/></label>
+    						<form:input type="text" path="celular" class="form-control" id="frm_celular" placeholder="Informe o celular"/>
+  						</div>
+  						
+  						<div class="form-group">
+    						<label for="frm_cep"><s:message code="campo.pessoa.cep"/></label>
     						<form:input type="text" path="endereco.cep" class="form-control" id="frm_cep" />
     						<a href="http://www.buscacep.correios.com.br/" target="_blank">Não sabe o cep?</a>
   						</div>
   						<input type="button" class="btn btn-default" id="btn_cep" value="ok"/>
   						
-  						<h1 class="text-center head-endereco">Endereco</h1>
+  						<h1 class="text-center head-endereco"><s:message code="titulo.pessoa.endereco"/></h1>
   						<div class="form-group frm_rua">
-    						<label for="frm_rua">Logradouro</label>
+    						<label for="frm_rua"><s:message code="campo.pessoa.logradouro"/></label>
     						<form:input type="text" path="endereco.rua" class="form-control" id="frm_rua" placeholder="Informe o cep acima"/>
   						</div>
   						
   						<div class="form-group frm_numero">
-    						<label for="frm_numero">Numero</label>
+    						<label for="frm_numero"><s:message code="campo.pessoa.numero"/></label>
     						<form:input type="text" path="endereco.numero" class="form-control" id="frm_numero" placeholder="Informe o numero"/>
   						</div>
   						
   						<div class="form-group frm_complemento">
-    						<label for="frm_complemento">Complemento</label>
+    						<label for="frm_complemento"><s:message code="campo.pessoa.complemento"/></label>
     						<form:input type="text" path="endereco.complemento" class="form-control" id="frm_complemento" placeholder="Informe o complemento"/>
   						</div>
   						
   						<div class="form-group frm_bairro">
-    						<label for="frm_Bairro">Bairro</label>
+    						<label for="frm_Bairro"><s:message code="campo.pessoa.bairro"/></label>
     						<form:input type="text" path="endereco.bairro" class="form-control" id="frm_bairro" placeholder="Informe o bairro"/>
   						</div>
   						
   						<div class="form-group frm_estados">
-    						<label for="frm_estados">Estados</label>
+    						<label for="frm_estados"><s:message code="campo.pessoa.estados"/></label>
     						<form:select class="form-control" id="frm_estados" path="endereco.estado">
 								<option value="">--Selecione--</option>
 							</form:select>
   						</div>
   						
   						<div class="form-group frm_uf">
-    						<label for="frm_uf">Uf</label>
+    						<label for="frm_uf"><s:message code="campo.pessoa.uf"/></label>
     						<form:select class="form-control" id="frm_uf" path="endereco.uf">
 								<option value="">--Selecione--</option>
 							</form:select>
   						</div>
-  						<button type="submit" class="btn btn-default">Salvar</button>
+  						<button type="submit" class="btn btn-default"><s:message code="botao.pessoa.salvar"/></button>
 					</form:form>
                 </div>
             </div>
@@ -172,7 +177,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p><s:message code="rodape.pessoa.autoria"/></p>
                 </div>
             </div>
         </div>

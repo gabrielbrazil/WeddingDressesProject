@@ -1,6 +1,11 @@
 $(document).ready(function(){
 	
 		$("#frm_cep").mask("99999-999");
+		$("#frm_cpf").mask("999.999.999-99");
+		$("#frm_telefone").mask("9999-9999");
+		$("#frm_celular").mask("9999-99999");
+		$("#frm_cep").mask("99999-999");
+		
 	
 	
 	$('#btn_cep').click(function(){

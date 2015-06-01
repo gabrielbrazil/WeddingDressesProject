@@ -34,6 +34,12 @@
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
     	<property name="dataSource" ref="dataSource" />
   	</bean>
+  	
+  	<!-- Register the messages.properties -->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="/WEB-INF/messages" />
+        <property name="defaultEncoding" value="UTF-8"/>
+    </bean>
     
     
     </beans>

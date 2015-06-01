@@ -19,16 +19,16 @@ import org.json.JSONObject;
 public class Endereco {
 	private Integer id;
 	@NotNull
-	@Size(min=3,max=50,message="Informe um logradouro corretamente.")
+	@Size(min=3,max=50)
 	private String rua;
 	@NotNull
-	@Size(min=1,max=8,message="Deve ter no minimo 1 e no maximo 8 caracteres")
+	@Size(min=1,max=8)
 	private String numero;
 	@NotNull
-	@Size(min=5,max=40,message="Deve ter mais de 5 caracteres")
+	@Size(min=5,max=40)
 	private String complemento;
 	@NotNull
-	@Size(min=8,message="Informe um Cep Corretamente")
+	@Size(min=8)
 	private String cep;
 	@NotNull
 	private String estado;

@@ -10,17 +10,18 @@ import javax.validation.constraints.Size;
 public class Pessoa {
 		private Integer id;
 		@NotNull
-		@Size(min=5,message="O nome não pode ter menos de 5 caracteres!")
+		@Size(min=5)
 		private String nome;
 		@NotNull
-		@Size(min=11,max=11,message="Favor informar o cpf corretamente!")
+		@Size(min=11,max=11)
 		private String cpf;
 		@NotNull
-		@Pattern(regexp="^[\\w\\-]+(\\.[\\w\\-]+)*@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}$",message="Formato do email incorreto")
+		@Pattern(regexp="^[\\w\\-]+(\\.[\\w\\-]+)*@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}$")
 		private String email;
-		@NotNull
-		@Size(min=9,max=9,message="Informar o tel/cel corretamente")
+		@Size(min=9,max=9)
 		private String telefone;
+		@Size(min=9, max=9)
+		private String celular;
 		private boolean recebeInformacao;
 		@NotNull
 		@Valid
@@ -28,7 +29,6 @@ public class Pessoa {
 		
 		
 		public Pessoa() {}
-		
 
 		public String getNome() {
 			return nome;
@@ -85,5 +85,17 @@ public class Pessoa {
 		public void setEndereco(Endereco endereco) {
 			this.endereco = endereco;
 		}
+
+
+		public String getCelular() {
+			return celular;
+		}
+
+
+		public void setCelular(String celular) {
+			this.celular = celular;
+		}
+		
+		
 	
 }

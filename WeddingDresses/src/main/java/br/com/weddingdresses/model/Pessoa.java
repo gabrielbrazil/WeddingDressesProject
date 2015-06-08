@@ -22,7 +22,6 @@ public class Pessoa {
 		private String telefone;
 		@Size(min=9, max=9)
 		private String celular;
-		private boolean recebeInformacao;
 		@NotNull
 		@Valid
 		private Endereco endereco;
@@ -60,14 +59,6 @@ public class Pessoa {
 
 		public void setTelefone(String telefone) {
 			this.telefone = telefone;
-		}
-
-		public boolean isRecebeInformacao() {
-			return recebeInformacao;
-		}
-
-		public void setRecebeInformacao(boolean recebeInformacao) {
-			this.recebeInformacao = recebeInformacao;
 		}
 
 		public Integer getId() {

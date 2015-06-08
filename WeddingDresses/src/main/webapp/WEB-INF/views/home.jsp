@@ -22,12 +22,11 @@
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css"/>
 
 
-	   <!-- jQuery -->
+	 <!-- jQuery -->
     <script src="<s:url value="/resources/js/jquery.js"/>"></script>
-
-    <!-- Bootstrap Core JavaScript -->
     <script src="<s:url value="/resources/js/bootstrap.min.js"/>"></script>
-	
+	<script src="<s:url value="/resources/js/jquery.js"/>"></script>
+    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -64,9 +63,6 @@
                     </li>
                     <li>
                         <a href="about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="blog.html">Blog</a>
                     </li>
                     <li>
                         <a href="contact.html">Contact</a>
@@ -172,14 +168,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Script to Activate the Carousel -->
-    <script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-    </script>
-
 </body>
 
 </html>
